@@ -1,12 +1,6 @@
-#################
-# CONFIGURATION #
-#################
 _subdirectory: project
 _templates_suffix: .tmpl
 
-#################
-# Questions     #
-#################
 project_name: lambda-starter-java11
   type: str
   help: What is your project's name?
