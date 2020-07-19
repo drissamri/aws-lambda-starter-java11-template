@@ -19,7 +19,7 @@ public class AppFunction {
             response = createResponse(200);
         } catch (Exception ex) {
             LOG.error("Exception: {}", ex.getMessage(), ex);
-            response = createErrorResponse(500);
+            response = createResponse(500);
         }
 
         response.setHeaders(Map.of("Content-Type", "application/json"));
