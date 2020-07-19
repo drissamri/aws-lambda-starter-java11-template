@@ -13,7 +13,6 @@ public class AppFunction {
     public APIGatewayV2HTTPResponse handleRequest(APIGatewayV2HTTPEvent event) {
         APIGatewayV2HTTPResponse response;
         try {
-
             LOG.info("Input: {}", event);
 
             response = createResponse(200);

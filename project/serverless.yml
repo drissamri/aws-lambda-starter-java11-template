@@ -10,17 +10,16 @@ provider:
   httpApi:
     payload: '2.0'
 
-package:
-  artifact: 'target/lambda.zip'
-
 functions:
   refresh:
     handler: [[package_name]].AppLambda::handleRequest
+    package:
+      artifact: '[[function_name]]/target/lambda.zip'
     runtime: java11
-    memorySize: 1024
+    memorySize: 1536
     timeout: 10
     events:
       - httpApi:
-          path: /hello
-          method: GET
+          path: /
+          method: POST
     environment: ${file(serverless/env/${self:provider.stage}.yml):environment}
