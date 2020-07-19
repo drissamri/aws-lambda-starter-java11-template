@@ -1,4 +1,4 @@
-package be.telenet.vitria;
+package [[package_name]];
 
 import com.amazonaws.services.lambda.runtime.events.APIGatewayV2HTTPEvent;
 import com.amazonaws.services.lambda.runtime.events.APIGatewayV2HTTPResponse;
