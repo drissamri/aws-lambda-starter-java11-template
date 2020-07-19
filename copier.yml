@@ -1,9 +1,7 @@
 _subdirectory: project
 _templates_suffix: .tmpl
 
-project_name: lambda-starter-java11
-  type: str
-  help: What is your project's name?
-package_name:
-  type: str
-  help: What is your base package name?
+project_name:
+  type: str # Any value will be treated raw as a string
+  help: An awesome project needs an awesome name. Tell me yours.
+  default: paradox-specifier
