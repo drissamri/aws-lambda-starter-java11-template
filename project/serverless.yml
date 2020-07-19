@@ -1,0 +1,26 @@
+service: [[project_name]]
+
+provider:
+  name: aws
+  region: eu-central-1
+  stage: ${opt:stage, 'dvp'}
+
+  logRetentionInDays: 7
+  versionFunctions: false
+  httpApi:
+    payload: '2.0'
+
+package:
+  artifact: 'target/lambda.zip'
+
+functions:
+  refresh:
+    handler: [[package_name]].AppLambda::handleRequest
+    runtime: java11
+    memorySize: 1024
+    timeout: 10
+    events:
+      - httpApi:
+          path: /hello
+          method: GET
+    environment: ${file(serverless/env/${self:provider.stage}.yml):environment}

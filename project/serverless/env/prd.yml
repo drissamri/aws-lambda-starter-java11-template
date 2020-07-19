@@ -1,0 +1,2 @@
+environment:
+  ENVIRONMENT: ${self:provider.stage}
